@@ -1,0 +1,26 @@
+{
+  "name": "solidity-inbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corbecker/solidity-inbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corbecker/solidity-inbox/issues"
+  },
+  "homepage": "https://github.com/corbecker/solidity-inbox#readme",
+  "dependencies": {
+    "solc": "^0.4.25"
+  }
+}
