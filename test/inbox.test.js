@@ -4,6 +4,7 @@ const provider = ganache.provider();
 const Web3 = require('web3'); // constructor function so capitalised
 const { interface, bytecode } = require('../compile');
 const INITIAL_STRING = 'Hi There.';
+const NEW_STRING = "Yo";
 
 // Web3 & local Ethereum network need a provider to talk to one another
 const web3 = new Web3(provider); 
@@ -29,5 +30,10 @@ describe('Inbox', () => {
   it('has default message', async () => {
     const message = await inbox.methods.message().call(); // calls the message method in the inbox contract
     assert.equal(message, INITIAL_STRING);
-  })
-})
+  });
+  it('sets a new message', async () => {
+    await inbox.methods.setMessage(NEW_STRING).send({ from: accounts[0] }); // send the transaction to the network
+    const message = await inbox.methods.message().call();
+    assert.equal(message, NEW_STRING);
+  });
+});
